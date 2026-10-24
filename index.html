@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etsy Print on Demand Profit Calculator 2026 | Free Fee Tracker</title>
+    <meta name="description" content="Calculate your exact Etsy profit margins for Print on Demand. Automatically deducts Etsy transaction fees, listing fees, and payment processing.">
+    <style>
+        /* CSS Reset & Basic Setup */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* Header */
+        header { background-color: #F1641E; color: white; text-align: center; padding: 2rem 1rem; margin-bottom: 2rem; }
+        header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* Main Container */
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
+
+        /* Calculator Card UI */
+        .calculator-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); margin-bottom: 3rem; }
+        .input-group { margin-bottom: 1.5rem; }
+        .input-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: #444; }
+        .input-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; transition: border-color 0.3s; }
+        .input-group input:focus { border-color: #F1641E; outline: none; }
+        
+        button { background-color: #F1641E; color: white; border: none; padding: 14px; width: 100%; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; }
+        button:hover { background-color: #d35400; }
+
+        /* Results Box */
+        .result-box { display: none; margin-top: 2rem; padding: 1.5rem; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; }
+        .result-box h3 { color: #166534; font-size: 1.8rem; text-align: center; margin-bottom: 1rem; }
+        .breakdown { background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e5e7eb; font-size: 0.95rem; }
+        .breakdown p { display: flex; justify-content: space-between; margin-bottom: 0.5rem; border-bottom: 1px dashed #eee; padding-bottom: 0.2rem; }
+        .breakdown p:last-child { border-bottom: none; font-weight: bold; color: #b91c1c; }
+
+        /* SEO & AdSense Content Section */
+        .seo-content { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 3rem; }
+        .seo-content h2 { color: #222; margin-bottom: 1rem; margin-top: 1.5rem; }
+        .seo-content p { margin-bottom: 1rem; color: #555; }
+
+        /* Footer */
+        footer { background-color: #222; color: #ccc; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; }
+        footer .legal-links { margin-bottom: 1rem; }
+        footer .legal-links a { color: #F1641E; text-decoration: none; margin: 0 10px; }
+        footer .legal-links a:hover { text-decoration: underline; }
+        footer .disclaimer { max-width: 600px; margin: 0 auto; font-size: 0.8rem; opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Etsy POD Profit Calculator</h1>
+        <p>Accurate fee breakdown for Printify, Printful, and Custom POD sellers (2026 Updated)</p>
+    </header>
+
+    <div class="container">
+        <!-- Calculator Section -->
+        <div class="calculator-card">
+            <div class="input-group">
+                <label>Customer Pays (Item Price + Shipping Charged) $</label>
+                <input type="number" id="revenue" placeholder="e.g. 29.99" step="0.01">
+            </div>
+            <div class="input-group">
+                <label>Production Cost (What you pay Printify/Printful) $</label>
+                <input type="number" id="production" placeholder="e.g. 11.50" step="0.01">
+            </div>
+            <div class="input-group">
+                <label>Shipping Cost (What you pay the provider) $</label>
+                <input type="number" id="shipping" placeholder="e.g. 4.50" step="0.01">
+            </div>
+
+            <button onclick="calculateProfit()">Calculate Net Profit</button>
+
+            <div class="result-box" id="resultBox">
+                <h3>Net Profit: $<span id="netProfit">0.00</span></h3>
+                <div class="breakdown" id="breakdown">
+                    <!-- Results injected via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense & SEO Content Section -->
+        <article class="seo-content">
+            <h2>How to Use the Etsy POD Profit Calculator</h2>
+            <p>Running a Print on Demand (POD) business on Etsy requires precise financial planning. Whether you use Printify, Printful, or Gelato, hidden fees can easily eat into your margins. Enter your total revenue (what the customer pays) and your total costs (what the POD provider charges you) to instantly see your true take-home profit.</p>
+            
+            <h2>Understanding Etsy Fees (2026)</h2>
+            <p>Etsy charges several fees that are automatically deducted from your sales before the money hits your bank account:</p>
+            <ul>
+                <li><strong>Listing Fee:</strong> A flat $0.20 per item listed or renewed.</li>
+                <li><strong>Transaction Fee:</strong> Etsy takes 6.5% of the total order amount (including shipping and gift wrap).</li>
+                <li><strong>Payment Processing Fee:</strong> For US sellers, this is typically 3% + $0.25 per transaction (rates vary by country).</li>
+            </ul>
+
+            <h2>Why Margins Matter in Print on Demand</h2>
+            <p>Because you are paying a third-party manufacturer to print and ship your items, your base costs are higher than handmade sellers. Maintaining at least a 20-30% profit margin ensures you have enough budget left over for Etsy Ads and promotional discounts.</p>
+        </article>
+    </div>
+
+    <!-- Legal Footer -->
+    <footer>
+        <div class="legal-links">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="mailto:contact@yourdomain.com">Contact Us</a>
+        </div>
+        <div class="disclaimer">
+            <p>Disclaimer: This website is an independent tool and is not affiliated with, endorsed by, or sponsored by Etsy, Inc. All Etsy trademarks are the property of Etsy, Inc. The calculations provided are estimates based on standard US rates and may vary based on your specific location and tax setup.</p>
+            <p>&copy; 2026 Etsy POD Calculator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Calculator Logic -->
+    <script>
+        function calculateProfit() {
+            let revenue = parseFloat(document.getElementById('revenue').value) || 0;
+            let production = parseFloat(document.getElementById('production').value) || 0;
+            let shipping = parseFloat(document.getElementById('shipping').value) || 0;
+
+            const listingFee = 0.20;
+            const transactionFeeRate = 0.065; 
+            const paymentProcessingRate = 0.03; 
+            const paymentProcessingFixed = 0.25; 
+
+            let transactionFee = revenue * transactionFeeRate;
+            let paymentProcessingFee = (revenue * paymentProcessingRate) + paymentProcessingFixed;
+            let totalEtsyFees = listingFee + transactionFee + paymentProcessingFee;
+            
+            let totalCosts = production + shipping + totalEtsyFees;
+            let profit = revenue - totalCosts;
+            let profitMargin = revenue > 0 ? ((profit / revenue) * 100).toFixed(1) : 0;
+
+            document.getElementById('netProfit').innerText = profit.toFixed(2);
+            document.getElementById('netProfit').style.color = profit > 0 ? '#166534' : '#b91c1c';
+
+            document.getElementById('breakdown').innerHTML = `
+                <p><span>Listing Fee:</span> <span>$${listingFee.toFixed(2)}</span></p>
+                <p><span>Transaction Fee (6.5%):</span> <span>$${transactionFee.toFixed(2)}</span></p>
+                <p><span>Payment Processing (3% + 0.25):</span> <span>$${paymentProcessingFee.toFixed(2)}</span></p>
+                <p style="color:#F1641E; font-weight:bold;"><span>Total Etsy Fees:</span> <span>$${totalEtsyFees.toFixed(2)}</span></p>
+                <p><span>Production & Shipping:</span> <span>$${(production + shipping).toFixed(2)}</span></p>
+                <p><span>Profit Margin:</span> <span>${profitMargin}%</span></p>
+            `;
+            
+            document.getElementById('resultBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
