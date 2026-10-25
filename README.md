@@ -7,7 +7,7 @@
 
 > A fast, responsive, single-page web application designed for Etsy Print-on-Demand sellers to accurately calculate their net profit margins.
 
-🔗 **[Live Demo: Try the Calculator Here](ضع-رابط-صفحة-github-pages-هنا)**
+🔗 **[Live Demo: Try the Calculator Here] https://gellodoon.github.io/etsy-pod-calculator/  **
 
 ---
 
